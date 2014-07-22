@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+	<head>
+		<title>{{name}}</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+		<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.3.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/jquery.mobile.structure-1.4.3.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/jquery.mobile.theme-1.4.3.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/jquery.mobile.external-1.4.3.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/jquery.mobile.icons-1.4.3.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/styles.css" />
+	</head>	
+	<body>
+		<!-- Role predefinido -->
+		<!-- home -->
+		<div data-role="page" data-theme="b" id="home">
+			<div data-role="header">
+				<h1>{{name}}</h1>
+			</div>
+			<div data-role="content">
+				<a href="#aboutUs" class="ui-btn" data-role="button">Nosotros</a>
+				<a href="#info" class="ui-btn">Info</a>
+				<a href="#products" class="ui-btn">Productos</a>
+				<a href="#contactForm" class="ui-btn">Contactenos</a>
+			</div>
+			<div data-role="footer">
+				Footer
+			</div>				
+		</div>
+		<!-- About -->
+		<div data-role="page" data-theme="b" id="aboutUs">
+			<div data-role="header">
+				<h1>Hola App</h1>
+			</div>
+			<div data-role="content">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>	
+
+				<a href="#home" class="ui-btn">Home</a>
+				<a href="#info" class="ui-btn">Info</a>
+				<a href="#products" class="ui-btn">Productos</a>
+				<a href="#contactForm" class="ui-btn">Contactenos</a>
+			</div>
+			<div data-role="footer">
+				Footer
+			</div>				
+		</div>
+		<!-- About -->
+		<div data-role="page" data-theme="b" id="info">
+			<div data-role="header">
+				<h1>Hola App</h1>
+			</div>
+			<div data-role="content">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>	
+
+				<a href="#home" class="ui-btn">Home</a>
+				<a href="#products" class="ui-btn">Productos</a>
+				<a href="#contactForm" class="ui-btn">Contactenos</a>
+			</div>
+			<div data-role="footer">
+				Footer
+			</div>				
+		</div>
+		<!-- Form Info -->
+		<div data-role="page" id="products">
+			<div data-role="header">
+				<h1>Hola App</h1>
+			</div>
+			<div data-role="content">
+				<a href="#home" class="ui-btn">Home</a>	
+				<a href="#aboutUs" class="ui-btn">Nosotros</a>
+				<a href="#info" class="ui-btn">Info</a>
+				<a href="#contactForm" class="ui-btn">Contactenos</a>	
+			</div>
+			<div data-role="footer">
+				Footer
+			</div>				
+		</div>
+		<div data-role="page" id="contactForm">
+			<div data-role="header">
+				<h1>Hola App</h1>
+			</div>
+			<div data-role="content">
+				<form action=".">
+					<label for="email">Ingrese su email:</label>
+					<input type="text" name="email" id="email" placeholder="email con @">
+					<span class="error email">Ingrese su correo electronico</span>
+					<label for="userid">Ingrese su usuario:</label>
+					<input type="text" name="userid" id="userid" placeholder="userid con @">
+					<span class="error userid">Ingrese su usuario</span>
+					<button class="ui-btn" id="myInfo">Enviar</button>
+				</form>
+
+				<a href="#viewInfo" class="ui-btn" data-rel="dialog" data-transition="flip" class="viewMyInfo">Ver información</a>
+
+				<a href="#home" class="ui-btn">Home</a>	
+				<a href="#aboutUs" class="ui-btn">Nosotros</a>
+				<a href="#info" class="ui-btn">Info</a>
+			</div>
+			<div data-role="footer">
+				Footer
+			</div>				
+		</div>
+
+		<div data-role="page" id="viewInfo">
+			<div data-role="header">
+				<h1>Hola App</h1>
+			</div>
+			<div data-role="content">
+				<div id="myViewInfo">
+				</div>
+			</div>
+			<div data-role="footer">
+				Footer
+			</div>				
+		</div>
+		<!-- orden de los scripts -->
+		<script src="js/jquery-1.11.1.min.js"></script>
+		<script src="js/jquery.mobile-1.4.3.min.js"></script>		
+		<script src="js/lab3-5.js"></script>
+	</body>
+</html>
