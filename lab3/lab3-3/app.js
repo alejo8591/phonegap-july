@@ -10,7 +10,7 @@ var express = require('express')
 
 var app = express();
 
-var debug = require('debug')('lab_4')
+var debug = require('debug')('lab3-3');
 
 //Configuracion para ExpressJS
 app.set('port', process.env.PORT || 3535);
@@ -35,9 +35,9 @@ app.get('/', function(req, res){
 
 app.post('/message', function(req, res){
 	var data = {
-		name : "Juan",
-		age : "21",
-		id : "32132"
+		name : "Alejandro Romero",
+		age : "28",
+		id : "4544333"
 	}
 	//Mustra el body de la peticion
 	console.log(req.body);

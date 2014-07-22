@@ -67,3 +67,5 @@ assets/
 # Ignore public files
 */*/public/
 public/
+
+files/
