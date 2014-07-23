@@ -16,7 +16,8 @@
         <link rel="stylesheet" type="text/css" href="css/styles.css" />
     </head>
     <body>
-        <div data-role="page" data-theme="b" id="home">
+        <!-- index -->
+        <div data-role="page" data-theme="b" id="index">
             <div data-role="header">
                 <h1>Lab3-7 App</h1>
             </div>
@@ -29,13 +30,71 @@
                 Footer
             </div>              
         </div>
+        <!-- Login -->
+        <div data-role="page" data-theme="b" id="login">
+            <div data-role="header">
+                <h1>Lab3-7 App</h1>
+            </div>
+            <div data-role="content">
+                <form action=".">
+                    <label for="username">Ingrese su usario:</label>
+                    <input type="text" name="username" id="username" placeholder="Su usuario">
+                    <label for="password">Ingrese su usuario:</label>
+                    <input type="password" name="password" id="password" placeholder="Su password">
+                    <span class="error user-login"></span>
+                    <button class="ui-btn" id="loginUser">Ingresar</button>
+                </form>
+                <a href="#register" class="ui-btn">¡Registrarme!</a>
+            </div>
+            <div data-role="footer" data-position="fixed">
+                Footer
+            </div>              
+        </div>
+        <!-- Register -->
+        <div data-role="page" data-theme="b" id="register">
+            <div data-role="header">
+                <h1>Lab3-7 App</h1>
+            </div>
+            <div data-role="content">
+                <form action=".">
+                    <label for="nameRegister">Nombre:</label>
+                    <input type="text" name="nameRegister" id="nameRegister" placeholder="Nombre y Apellido" />
+                    <span class="error user-name"></span>
+
+                    <label for="usernameRegister">Usario:</label>
+                    <input type="text" name="usernameRegister" id="usernameRegister" placeholder="Ingrese su usuario" />
+                    <span class="error user-username"></span>
+
+                    <label for="passwordRegister">Password:</label>
+                    <input type="password" name="passwordRegister" id="passwordRegister" placeholder="Minimo 6 caracteres" />
+                    <span class="error user-password"></span>
+
+                    <label for="emailRegister">Email:</label>
+                    <input type="text" name="emailRegister" id="emailRegister" placeholder="Su emailRegister">
+                    <span class="error user-email"></span>
+
+                    <label for="ageRegister">Edad:</label>
+                    <input type="text" name="ageRegister" id="ageRegister" placeholder="Nombre y Apellido" />
+                    <span class="error user-age"></span>
+
+                    <button class="ui-btn" id="registerUser">Registrar</button>
+                </form>
+            </div>
+            <div data-role="footer" data-position="fixed">
+                Footer
+            </div>              
+        </div>
+        <!-- Scripts JS -->
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript">
             app.initialize();
         </script>
         <script src="js/jquery-1.11.1.min.js"></script>
-        <script src="js/jquery.mobile-1.4.3.min.js"></script>       
-        <script src="js/lab3-7.js"></script>
+        <script src="js/jquery.mobile-1.4.3.min.js"></script>
+        <!-- http://pajhome.org.uk/crypt/md5/instructions.html -->
+        <script type="text/javascript" src="js/md5-min.js"></script>    
+        <!-- first moment <script src="js/lab3-7.js"></script> -->
+        <script src="js/lab3-7b.js"></script>
     </body>
 </html>
