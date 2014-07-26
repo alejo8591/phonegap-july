@@ -1,21 +1,3 @@
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
 var app = {
     // Application Constructor
     initialize: function() {
@@ -34,6 +16,23 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
+        var states = {};
+
+        states[Connection.UNKNOW] = "Conexión no reconocida";
+
+        states[Connection.WIFI] = "Conexión por WI-FI";
+
+        states[Connection.CELL_2G] = "Conexión por 2G";
+
+        states[Connection.CELL_3G] = "Conexión por 3G";
+
+        states[Connection.CELL_4G] = "Conexión por 4G";
+
+        states[Connection.CELL] = "Conexión generica de red Celular";
+
+        states[Connection.NONE] = "No esta conectado a ninguna red";
+
+        this.checkConnection(states);
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
@@ -45,5 +44,36 @@ var app = {
         receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
+    },
+
+    checkConnection: function(states){
+        var networkState = navigator.connection.type;
+
+        if(networkState === Connection.NONE){
+            this.errorConnection();
+        } else {
+            navigator.notification.alert(
+                "Conectado por " + states[networkState], // Mensaje
+                this.myCallback(), // Calback por si se necesita
+                "Titulo de conexión",
+                "Aceptar"
+            ):
+        }
+    },
+    errorConnection: function(){
+        navigator.notification.confirm(
+            "Error en la conexión", // Mensaje
+            this.vibration(1000), // callback opcional
+            "Error",
+            ["Aceptar", "Salir"]
+        );
+    },
+    vibration : function(time){
+        navigator.notification.vibrate(time);
+        navigator.notification.bepp(3);
+    },
+
+    myCallback : function(){
+        console.log("ok");
     }
 };

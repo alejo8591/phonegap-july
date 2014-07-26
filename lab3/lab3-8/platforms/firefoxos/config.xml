@@ -9,4 +9,10 @@
     </author>
     <content src="index.html" />
     <access origin="*" />
+    <feature name="Notification">
+        <param name="firefoxos-package" value="Notification" />
+    </feature>
+    <feature name="Device">
+        <param name="firefoxos-package" value="Device" />
+    </feature>
 </widget>
