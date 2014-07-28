@@ -1,0 +1,3 @@
+# view AndroidManifest.xml #generated:6
+-keep class io.app.lab3_10.Lab310 { <init>(...); }
+
