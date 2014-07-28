@@ -69,6 +69,6 @@ assets/
 public/
 
 files/
-
-*/www/js/
-*/www/css/
+# ignore assets
+*/*/www/js/
+*/*/www/css/
