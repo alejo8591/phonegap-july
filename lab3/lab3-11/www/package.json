@@ -1,0 +1,10 @@
+{
+  "name": "lab3-11",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {},
+  "devDependencies": {
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-htmlhint": "^0.4.1"
+  }
+}
