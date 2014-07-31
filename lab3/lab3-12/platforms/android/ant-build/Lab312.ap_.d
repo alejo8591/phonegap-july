@@ -35,6 +35,9 @@
 /Users/alejo8591/floobits/share/alejo8591/phonegap/lab3/lab3-12/platforms/android/assets/www/img \
 /Users/alejo8591/floobits/share/alejo8591/phonegap/lab3/lab3-12/platforms/android/assets/www/index.html \
 /Users/alejo8591/floobits/share/alejo8591/phonegap/lab3/lab3-12/platforms/android/assets/www/js \
+/Users/alejo8591/floobits/share/alejo8591/phonegap/lab3/lab3-12/platforms/android/assets/www/photo-data.html \
+/Users/alejo8591/floobits/share/alejo8591/phonegap/lab3/lab3-12/platforms/android/assets/www/photo-uri.html \
+/Users/alejo8591/floobits/share/alejo8591/phonegap/lab3/lab3-12/platforms/android/assets/www/plugins \
 /Users/alejo8591/floobits/share/alejo8591/phonegap/lab3/lab3-12/platforms/android/assets/www/css/index.css \
 /Users/alejo8591/floobits/share/alejo8591/phonegap/lab3/lab3-12/platforms/android/assets/www/css/jquery.mobile-1.4.3.min.css \
 /Users/alejo8591/floobits/share/alejo8591/phonegap/lab3/lab3-12/platforms/android/assets/www/css/jquery.mobile.external-png-1.4.3.min.css \
@@ -50,6 +53,10 @@
 /Users/alejo8591/floobits/share/alejo8591/phonegap/lab3/lab3-12/platforms/android/assets/www/js/jquery.mobile-1.4.3.min.js \
 /Users/alejo8591/floobits/share/alejo8591/phonegap/lab3/lab3-12/platforms/android/assets/www/js/jquery.mobile-1.4.3.min.map \
 /Users/alejo8591/floobits/share/alejo8591/phonegap/lab3/lab3-12/platforms/android/assets/www/js/lab3-12.js \
-/Users/alejo8591/floobits/share/alejo8591/phonegap/lab3/lab3-12/platforms/android/assets/www/js/main.js \
-/Users/alejo8591/floobits/share/alejo8591/phonegap/lab3/lab3-12/platforms/android/assets/www/js/main.min.js \
+/Users/alejo8591/floobits/share/alejo8591/phonegap/lab3/lab3-12/platforms/android/assets/www/plugins/org.apache.cordova.camera \
+/Users/alejo8591/floobits/share/alejo8591/phonegap/lab3/lab3-12/platforms/android/assets/www/plugins/org.apache.cordova.camera/www \
+/Users/alejo8591/floobits/share/alejo8591/phonegap/lab3/lab3-12/platforms/android/assets/www/plugins/org.apache.cordova.camera/www/Camera.js \
+/Users/alejo8591/floobits/share/alejo8591/phonegap/lab3/lab3-12/platforms/android/assets/www/plugins/org.apache.cordova.camera/www/CameraConstants.js \
+/Users/alejo8591/floobits/share/alejo8591/phonegap/lab3/lab3-12/platforms/android/assets/www/plugins/org.apache.cordova.camera/www/CameraPopoverHandle.js \
+/Users/alejo8591/floobits/share/alejo8591/phonegap/lab3/lab3-12/platforms/android/assets/www/plugins/org.apache.cordova.camera/www/CameraPopoverOptions.js \
 /Users/alejo8591/floobits/share/alejo8591/phonegap/lab3/lab3-12/platforms/android/ant-build/AndroidManifest.xml \

@@ -57,7 +57,7 @@ module.exports = function(grunt){
 			      'www/css/jquery.mobile-1.4.3.min.css',
 			      'www/css/jquery.mobile.structure-1.4.3.min.css',
 			      'www/css/jquery.mobile.theme-1.4.3.min.css',
-			      'www/css/jquery.mobile.external-png-1.4.3.min.cs',
+			      'www/css/jquery.mobile.external-png-1.4.3.min.css',
 			      'www/css/jquery.mobile.icons-1.4.3.min.css'
 		      ]
 		    }
