@@ -1,0 +1,7 @@
+{
+  "tag-pair": true,
+  "tagname-lowercase" : true,
+  "attr-value-double-quotes" :true,
+  "attr-value-not-empty" : true,
+  "tag-self-close" : true
+}
