@@ -25,7 +25,7 @@ module.exports = function(grunt){
 		        '<%= grunt.template.today("yyyy-mm-dd") %> */',
 		    },
 		    dist: {
-		      src: ['www/js/jquery-1.11.1.min.js', 'www/jquery.mobile-1.4.3.min.js'],
+		      src: ['www/js/jquery-1.11.1.min.js', 'www/js/jquery.mobile-1.4.3.min.js'],
 		      dest: 'www/js/main.js'
 		    }
 		},
@@ -63,7 +63,7 @@ module.exports = function(grunt){
 		    }
 		  }
 		}
-});
+	});
 
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-htmlhint');
@@ -76,7 +76,8 @@ module.exports = function(grunt){
 	grunt.registerTask('default', ['jshint', 'htmlhint']);
 	grunt.registerTask('testjs', ['jshint']);
 	grunt.registerTask('testhtml', ['htmlhint']);
-	grunt.registerTask('testcss', ['csslint', 'cssmin']);
+	grunt.registerTask('testcss', ['csslint']);
 	grunt.registerTask('myjs', ['concat', 'uglify']);
+	grunt.registerTask('mincss', ['cssmin']);
 
 };

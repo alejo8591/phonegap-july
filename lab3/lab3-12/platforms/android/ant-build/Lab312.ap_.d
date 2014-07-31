@@ -53,6 +53,8 @@
 /Users/alejo8591/floobits/share/alejo8591/phonegap/lab3/lab3-12/platforms/android/assets/www/js/jquery.mobile-1.4.3.min.js \
 /Users/alejo8591/floobits/share/alejo8591/phonegap/lab3/lab3-12/platforms/android/assets/www/js/jquery.mobile-1.4.3.min.map \
 /Users/alejo8591/floobits/share/alejo8591/phonegap/lab3/lab3-12/platforms/android/assets/www/js/lab3-12.js \
+/Users/alejo8591/floobits/share/alejo8591/phonegap/lab3/lab3-12/platforms/android/assets/www/js/main.js \
+/Users/alejo8591/floobits/share/alejo8591/phonegap/lab3/lab3-12/platforms/android/assets/www/js/main.min.js \
 /Users/alejo8591/floobits/share/alejo8591/phonegap/lab3/lab3-12/platforms/android/assets/www/plugins/org.apache.cordova.camera \
 /Users/alejo8591/floobits/share/alejo8591/phonegap/lab3/lab3-12/platforms/android/assets/www/plugins/org.apache.cordova.camera/www \
 /Users/alejo8591/floobits/share/alejo8591/phonegap/lab3/lab3-12/platforms/android/assets/www/plugins/org.apache.cordova.camera/www/Camera.js \
