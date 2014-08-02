@@ -1,0 +1,19 @@
+/Users/alejo8591/floobits/share/alejo8591/phonegap/lab3/lab3-13/platforms/android/ant-build/classes.dex : \
+/Users/alejo8591/floobits/share/alejo8591/phonegap/lab3/lab3-13/platforms/android/ant-build/classes/io/app/lab3_13/BuildConfig.class \
+/Users/alejo8591/floobits/share/alejo8591/phonegap/lab3/lab3-13/platforms/android/ant-build/classes/io/app/lab3_13/Lab313.class \
+/Users/alejo8591/floobits/share/alejo8591/phonegap/lab3/lab3-13/platforms/android/ant-build/classes/io/app/lab3_13/R$attr.class \
+/Users/alejo8591/floobits/share/alejo8591/phonegap/lab3/lab3-13/platforms/android/ant-build/classes/io/app/lab3_13/R$drawable.class \
+/Users/alejo8591/floobits/share/alejo8591/phonegap/lab3/lab3-13/platforms/android/ant-build/classes/io/app/lab3_13/R$string.class \
+/Users/alejo8591/floobits/share/alejo8591/phonegap/lab3/lab3-13/platforms/android/ant-build/classes/io/app/lab3_13/R$xml.class \
+/Users/alejo8591/floobits/share/alejo8591/phonegap/lab3/lab3-13/platforms/android/ant-build/classes/io/app/lab3_13/R.class \
+/Users/alejo8591/floobits/share/alejo8591/phonegap/lab3/lab3-13/platforms/android/ant-build/classes/org/apache/cordova/contacts/ContactAccessor$WhereOptions.class \
+/Users/alejo8591/floobits/share/alejo8591/phonegap/lab3/lab3-13/platforms/android/ant-build/classes/org/apache/cordova/contacts/ContactAccessor.class \
+/Users/alejo8591/floobits/share/alejo8591/phonegap/lab3/lab3-13/platforms/android/ant-build/classes/org/apache/cordova/contacts/ContactAccessorSdk5.class \
+/Users/alejo8591/floobits/share/alejo8591/phonegap/lab3/lab3-13/platforms/android/ant-build/classes/org/apache/cordova/contacts/ContactInfoDTO.class \
+/Users/alejo8591/floobits/share/alejo8591/phonegap/lab3/lab3-13/platforms/android/ant-build/classes/org/apache/cordova/contacts/ContactManager$1.class \
+/Users/alejo8591/floobits/share/alejo8591/phonegap/lab3/lab3-13/platforms/android/ant-build/classes/org/apache/cordova/contacts/ContactManager$2.class \
+/Users/alejo8591/floobits/share/alejo8591/phonegap/lab3/lab3-13/platforms/android/ant-build/classes/org/apache/cordova/contacts/ContactManager$3.class \
+/Users/alejo8591/floobits/share/alejo8591/phonegap/lab3/lab3-13/platforms/android/ant-build/classes/org/apache/cordova/contacts/ContactManager$4.class \
+/Users/alejo8591/floobits/share/alejo8591/phonegap/lab3/lab3-13/platforms/android/ant-build/classes/org/apache/cordova/contacts/ContactManager.class \
+/Users/alejo8591/floobits/share/alejo8591/phonegap/lab3/lab3-13/platforms/android/ant-build/classes/org/apache/cordova/device/Device.class \
+/Users/alejo8591/floobits/share/alejo8591/phonegap/lab3/lab3-13/platforms/android/ant-build/dexedLibs/classes-df6c9b03c5fe6b9f0ae23e85bd0e33d6.jar \
