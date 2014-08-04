@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
+        <link rel="stylesheet" type="text/css" href="css/styles.min.css" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <title>Lab3-14</title>
+    </head>
+    <body>
+        <!-- home -->
+        <div data-role="page" data-theme="a" id="home">
+            <div data-role="header">
+                <h1>Lab3-14</h1>
+            </div>
+            <div data-role="content">
+                <div class="ui-grid-solo">
+                    <div class="ui-block-a">
+                        <a href="#"  class="ui-btn" id="infoAccelerometer">Conocer info acelerometro</a>
+                    </div>
+                </div>
+                <div class="ui-grid-a">
+                    <div class="ui-block-a">La información es: </div>
+                    <div class="ui-block-b"></div>
+                </div>
+            </div>
+            <div data-role="footer" data-position="fixed">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#index" data-icon="grid">Index</a></li>
+                        <li><a href="#addContact" data-icon="star">foto 1</a></li>
+                        <li><a href="#deviceInfo" data-icon="gear">foto 2</a></li>
+                    </ul>
+                </div>
+            </div>              
+        </div>
+        <!-- scripts -->
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/main.min.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+        </script>
+        <script type="text/javascript" src="js/lab3-14.js"></script>
+        <script src="http://127.0.0.1:8080/target/target-script-min.js#lab3-14"></script>
+    </body>
+</html>
+
+
+
+
+

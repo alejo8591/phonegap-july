@@ -22,7 +22,7 @@
                         <a href="#addContact" class="ui-btn">Crear Contacto</a>
                     </div>
                     <div class="ui-block-b">
-                        <a href="photo-uri.html" class="ui-btn">Info Dispositivo</a>
+                        <a href="#deviceInfo" class="ui-btn">Info Dispositivo</a>
                     </div>
                 </div>
             </div>
@@ -31,7 +31,7 @@
                     <ul>
                         <li><a href="#index" data-icon="grid">Index</a></li>
                         <li><a href="#addContact" data-icon="star">foto 1</a></li>
-                        <li><a href="photo-uri.html" data-icon="gear">foto 2</a></li>
+                        <li><a href="#deviceInfo" data-icon="gear">foto 2</a></li>
                     </ul>
                 </div>
             </div>              
@@ -42,7 +42,7 @@
                 <h1>Lab3-13</h1>
             </div>
             <div data-role="content">
-                <form action="">
+                <form action="" id="createContact">
                     <label for="firstName">Primer Nombre: </label>
                     <input type="text" name="firstName" id="firstName" />
                     <label for="lastName">Apellidos: </label>
@@ -57,9 +57,34 @@
             <div data-role="footer" data-position="fixed">
                 <div data-role="navbar">
                     <ul>
-                        <li><a href="index.html" data-icon="grid">Index</a></li>
-                        <li><a href="photo-data.html" data-icon="star">foto 1</a></li>
-                        <li><a href="photo-uri.html" data-icon="gear">foto 2</a></li>
+                        <li><a href="#index" data-icon="grid">Index</a></li>
+                        <li><a href="#addContact" data-icon="star">foto 1</a></li>
+                        <li><a href="#deviceInfo" data-icon="gear">foto 2</a></li>
+                    </ul>
+                </div>
+            </div>              
+        </div>
+        <!-- Device list info -->
+        <div data-role="page" data-theme="a" id="deviceInfo">
+            <div data-role="header">
+                <h1>Lab3-13</h1>
+            </div>
+            <div data-role="content">
+                <div class="ui-grid-solo">
+                    <div class="ui-block-a">
+                        <a href="#" data-icon="eye" id="revealListView" class="ui-btn">Detalles del Dispositivo</a>
+                    </div>
+                </div>
+                <!-- creando elemento lista jQuery Mobile -->
+                <ul data-role="listview" data-inset="true" id="listDeviceInfo" data-theme="a">
+                </ul>
+            </div>
+            <div data-role="footer" data-position="fixed">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#index" data-icon="grid">Index</a></li>
+                        <li><a href="#addContact" data-icon="star">foto 1</a></li>
+                        <li><a href="#deviceInfo" data-icon="gear">foto 2</a></li>
                     </ul>
                 </div>
             </div>              

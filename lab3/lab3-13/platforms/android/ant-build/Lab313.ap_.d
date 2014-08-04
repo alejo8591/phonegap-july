@@ -248,6 +248,7 @@
 /Users/alejo8591/floobits/share/alejo8591/phonegap/lab3/lab3-13/platforms/android/assets/www/js/main.min.js \
 /Users/alejo8591/floobits/share/alejo8591/phonegap/lab3/lab3-13/platforms/android/assets/www/plugins/org.apache.cordova.contacts \
 /Users/alejo8591/floobits/share/alejo8591/phonegap/lab3/lab3-13/platforms/android/assets/www/plugins/org.apache.cordova.device \
+/Users/alejo8591/floobits/share/alejo8591/phonegap/lab3/lab3-13/platforms/android/assets/www/plugins/org.apache.cordova.dialogs \
 /Users/alejo8591/floobits/share/alejo8591/phonegap/lab3/lab3-13/platforms/android/assets/www/plugins/org.apache.cordova.contacts/www \
 /Users/alejo8591/floobits/share/alejo8591/phonegap/lab3/lab3-13/platforms/android/assets/www/plugins/org.apache.cordova.contacts/www/Contact.js \
 /Users/alejo8591/floobits/share/alejo8591/phonegap/lab3/lab3-13/platforms/android/assets/www/plugins/org.apache.cordova.contacts/www/ContactAddress.js \
@@ -260,4 +261,8 @@
 /Users/alejo8591/floobits/share/alejo8591/phonegap/lab3/lab3-13/platforms/android/assets/www/plugins/org.apache.cordova.contacts/www/contacts.js \
 /Users/alejo8591/floobits/share/alejo8591/phonegap/lab3/lab3-13/platforms/android/assets/www/plugins/org.apache.cordova.device/www \
 /Users/alejo8591/floobits/share/alejo8591/phonegap/lab3/lab3-13/platforms/android/assets/www/plugins/org.apache.cordova.device/www/device.js \
+/Users/alejo8591/floobits/share/alejo8591/phonegap/lab3/lab3-13/platforms/android/assets/www/plugins/org.apache.cordova.dialogs/www \
+/Users/alejo8591/floobits/share/alejo8591/phonegap/lab3/lab3-13/platforms/android/assets/www/plugins/org.apache.cordova.dialogs/www/android \
+/Users/alejo8591/floobits/share/alejo8591/phonegap/lab3/lab3-13/platforms/android/assets/www/plugins/org.apache.cordova.dialogs/www/notification.js \
+/Users/alejo8591/floobits/share/alejo8591/phonegap/lab3/lab3-13/platforms/android/assets/www/plugins/org.apache.cordova.dialogs/www/android/notification.js \
 /Users/alejo8591/floobits/share/alejo8591/phonegap/lab3/lab3-13/platforms/android/ant-build/AndroidManifest.xml \
