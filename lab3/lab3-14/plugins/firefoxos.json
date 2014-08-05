@@ -18,6 +18,16 @@
                         }
                     ]
                 }
+            },
+            "www/config.xml": {
+                "parents": {
+                    "/*": [
+                        {
+                            "xml": "<feature name=\"Vibration\"><param name=\"firefoxos-package\" value=\"Vibration\" /></feature>",
+                            "count": 1
+                        }
+                    ]
+                }
             }
         }
     },
@@ -26,6 +36,9 @@
             "PACKAGE_NAME": "io.app.lab3-14"
         },
         "org.apache.cordova.dialogs": {
+            "PACKAGE_NAME": "io.app.lab3-14"
+        },
+        "org.apache.cordova.vibration": {
             "PACKAGE_NAME": "io.app.lab3-14"
         }
     },

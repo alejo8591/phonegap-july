@@ -30,13 +30,26 @@ module.exports = [
         "file": "plugins/org.apache.cordova.dialogs/src/firefoxos/notification.js",
         "id": "org.apache.cordova.dialogs.dialogs-impl",
         "runs": true
+    },
+    {
+        "file": "plugins/org.apache.cordova.vibration/www/vibration.js",
+        "id": "org.apache.cordova.vibration.notification",
+        "merges": [
+            "navigator.notification"
+        ]
+    },
+    {
+        "file": "plugins/org.apache.cordova.vibration/src/firefoxos/VibrationProxy.js",
+        "id": "org.apache.cordova.vibration.VibrationProxy",
+        "runs": true
     }
 ];
 module.exports.metadata = 
 // TOP OF METADATA
 {
     "org.apache.cordova.device-motion": "0.2.8",
-    "org.apache.cordova.dialogs": "0.2.8"
+    "org.apache.cordova.dialogs": "0.2.8",
+    "org.apache.cordova.vibration": "0.3.9"
 }
 // BOTTOM OF METADATA
 });

@@ -23,14 +23,37 @@
                 </div>
                 <div class="ui-grid-a">
                     <div class="ui-block-a">La información es: </div>
-                    <div class="ui-block-b"></div>
+                    <div class="ui-block-b" id="revelaInfoAccelerometer"></div>
                 </div>
             </div>
             <div data-role="footer" data-position="fixed">
                 <div data-role="navbar">
                     <ul>
-                        <li><a href="#index" data-icon="grid">Index</a></li>
-                        <li><a href="#addContact" data-icon="star">foto 1</a></li>
+                        <li><a href="#home" data-icon="grid">Home</a></li>
+                        <li><a href="#watchAccelerometer" data-icon="star">foto 1</a></li>
+                        <li><a href="#deviceInfo" data-icon="gear">foto 2</a></li>
+                    </ul>
+                </div>
+            </div>              
+        </div>
+        <!-- Watch Accelerator -->
+        <div data-role="page" data-theme="a" id="watchAccelerometer">
+            <div data-role="header">
+                <h1>Lab3-14</h1>
+            </div>
+            <div data-role="content">
+                <ul data-role="listview" data-theme="a">
+                    <li data-role="collapsible" data-iconpos="right" data-inset="true">
+                        <h2>Acelerometro</h2>
+                        <ul data-role="listview" data-theme="b" id="revealWatchAccelerometer"></ul>
+                    </li>
+                </ul>
+            </div>
+            <div data-role="footer" data-position="fixed">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#home" data-icon="grid">Index</a></li>
+                        <li><a href="#watchAccelerometer" data-icon="star">foto 1</a></li>
                         <li><a href="#deviceInfo" data-icon="gear">foto 2</a></li>
                     </ul>
                 </div>
