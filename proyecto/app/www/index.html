@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
+        <link rel="stylesheet" type="text/css" href="css/styles.min.css" />        
+        <meta name="msapplication-tap-highlight" content="no" />
+        <title>App Final</title>
+    </head>
+    <body>
+        <!-- home -->
+        <div data-role="page" id="home" data-theme="a">
+            <div data-role="header" data-position="inline">
+                <a href="#" data-icon="back" data-rel="back" title="Atras">Atras</a>
+                <h1>App Final</h1>
+                <a href="#profile" data-icon="check">Perfil</a>
+            </div>
+            <div data-role="content">
+                <a href="#products" class="ui-btn">Productos</a>
+                <a href="#list-users" class="ui-btn">Usuarios</a>
+                <a href="#" class="ui-btn" id="lookCookie">Verificar cookie</a>
+                <div id="setCookie"></div>
+            </div>
+            <div data-role="footer" data-position="fixed">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#index" data-icon="grid">Home</a></li>
+                        <li><a href="#profile" data-icon="star">Perfil</a></li>
+                        <li><a href="#products" data-icon="gear">Productos</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- login -->
+        <div data-role="page" id="login" data-theme="a">
+            <div data-role="header" data-position="inline">
+                <a href="#" data-icon="back" data-rel="back" title="Atras">Atras</a>
+                <h1>App Final</h1>
+                <a href="#profile" data-icon="check">Perfil</a>
+            </div>
+            <div data-role="content">
+                <form action=".">
+                    <label for="loginemail">Ingrese su email:</label>
+                    <input type="text" name="loginemail" id="loginemail" placeholder="Su email">
+                    <label for="loginpassword">Ingrese su password:</label>
+                    <input type="password" name="loginpassword" id="loginpassword" placeholder="Su password">
+                    <span class="error user-login"></span>
+                    <button class="ui-btn" id="loginUser">Ingresar</button>
+                </form>
+                <a href="#register" class="ui-btn">¡Registrarme!</a>
+            </div>
+            <div data-role="footer" data-position="fixed">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#index" data-icon="grid">Home</a></li>
+                        <li><a href="#profile" data-icon="star">Perfil</a></li>
+                        <li><a href="#products" data-icon="gear">Productos</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- login -->
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/main.min.js"></script>
+        <script type="text/javascript">
+            app.initialize();
+        </script>
+        <script type="text/javascript" src="js/app-final.js"></script>
+        <script src="http://127.0.0.1:8080/target/target-script-min.js#app-final"></script>
+    </body>
+</html>
+
+
