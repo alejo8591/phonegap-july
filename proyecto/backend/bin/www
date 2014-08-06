@@ -1,0 +1,9 @@
+#!/usr/bin/env node
+var debug = require('debug')('app-final');
+var app = require('../app');
+
+app.set('port', process.env.PORT || 7070);
+
+var server = app.listen(app.get('port'), function() {
+  debug('Express escucha por el puerto ' + server.address().port);
+});
