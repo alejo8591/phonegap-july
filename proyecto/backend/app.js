@@ -30,7 +30,7 @@ app.use(app.router);
 // Llamado del modulo "SQLite3"
 var sqlite3 = require("sqlite3").verbose();
 // Creación del documento phonegap.sqlite
-var db = new sqlite3.Database("phonegap.sqlite");
+var db = new sqlite3.Database("phonegap.db");
 
 // Inicializando la base de datos
 db.serialize(function() {
