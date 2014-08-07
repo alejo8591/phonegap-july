@@ -6,24 +6,12 @@ Validation.prototype = {
 		var pattern = new RegExp(/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]+$/);
 		return pattern.test(email);
 	},
-
-	userid: function(username){
-		var pattern = new RegExp(/^[a-z0-9_]+$/);
-		return pattern.test(username);
-	},
-	age: function(ag){
+	phone: function(ag){
 		if(ag === "" || ag === null || isNaN(ag)){
 			return false;
 		}else{
 			var pattern = new RegExp(/^[0-9]+$/);
   			return pattern.test(ag);
-		}
-	},
-	ageRange: function(ag){
-		if(ag<5 || ag>70){
-			return false;
-		}else{
-			return true;
 		}
 	},
 	name: function(nam){
@@ -34,7 +22,7 @@ Validation.prototype = {
 		}
 	},
 	password: function(pass){
-		if(pass === "" || pass === null || pass.length === 0 || pass.length < 6){
+		if(pass === "" || pass === null || pass.length === 0 || pass.length < 4 || pass === undefined){
 			return false;
 		}else{
 			return true;
@@ -56,13 +44,14 @@ $(document).on('pageinit', '#home', function(event){
 	}
 });
 
-$(document).on('pageinit', '#login', function(event){
+
+$(document).on('pageinit', '#login', function(){
 	
 	var validate  = new Validation();
 
 	$('#loginUser').on('click', function(event){
 		console.log('click on loginUser');
-		if(validate.email($('#loginemail').val()) && $('#loginpassword').val() !== "" && $('#loginpassword').val() !== null){
+		if(validate.email($('#loginemail').val()) && validate.password($('#loginpassword').val())){
 			var user = {
 				"email" : $('#loginemail').val(),
 				"password" : $('#loginpassword').val()
@@ -73,12 +62,35 @@ $(document).on('pageinit', '#login', function(event){
 				dataType : "JSON",
 				data : user,
 				success: function(data){
-					sessionStorage.setItem('sessionId', data.cookie);
-					localStorage.setItem('firstname', data.firstname);
-					localStorage.setItem('lastname', data.lastname);
-					localStorage.setItem('password', data.password);
-					localStorage.setItem('phone', data.phone);
-					$.mobile.changePage('#home');
+					if(data.firstname !== undefined || data.lastname !== undefined || data.cookie !== undefined){
+						console.log('esto es data: ' + data.firstname + " " + data.lastname + " " + data.cookie);
+						sessionStorage.setItem('sessionId', data.cookie);
+						localStorage.setItem('firstname', data.firstname);
+						localStorage.setItem('lastname', data.lastname);
+						localStorage.setItem('password', data.password);
+						localStorage.setItem('phone', data.phone);
+						$.mobile.changePage('#home');
+					}else{
+						function onConfirm(buttonIndex) {
+							$('#loginForm').trigger('reset');
+							console.log(buttonIndex);
+							if(buttonIndex === 1){
+								$.mobile.changePage('#register');								
+							}else{
+								$.mobile.changePage('#login');								
+							}
+						}
+
+						navigator.notification.confirm(
+						    'El usuario no existe!' + '\n' + 
+						    'Registrar: Para crear su usuario' + '\n' + 
+						    'Cancelar para volver a intentar', // message
+						     onConfirm,            // callback to invoke with index of button pressed
+						    'Game Over',           // title
+						    ['Registrar','Cancelar']     // buttonLabels
+						);
+						return false;
+					}
 				},
 				error: function(xhr,status,error){
 					console.log(xhr,status,error);

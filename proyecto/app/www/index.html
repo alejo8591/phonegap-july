@@ -38,10 +38,9 @@
             <div data-role="header" data-position="inline">
                 <a href="#" data-icon="back" data-rel="back" title="Atras">Atras</a>
                 <h1>App Final</h1>
-                <a href="#profile" data-icon="check">Perfil</a>
             </div>
             <div data-role="content">
-                <form action=".">
+                <form action="." id="loginForm">
                     <label for="loginemail">Ingrese su email:</label>
                     <input type="text" name="loginemail" id="loginemail" placeholder="Su email">
                     <label for="loginpassword">Ingrese su password:</label>
@@ -52,16 +51,35 @@
                 <a href="#register" class="ui-btn">¡Registrarme!</a>
             </div>
             <div data-role="footer" data-position="fixed">
-                <div data-role="navbar">
-                    <ul>
-                        <li><a href="#index" data-icon="grid">Home</a></li>
-                        <li><a href="#profile" data-icon="star">Perfil</a></li>
-                        <li><a href="#products" data-icon="gear">Productos</a></li>
-                    </ul>
-                </div>
+                <h2>¡Bienvenido!</h2>
             </div>
         </div>
-        <!-- login -->
+        <!-- Register -->
+        <div data-role="page" id="register" data-theme="a">
+            <div data-role="header" data-position="inline">
+                <a href="#" data-icon="back" data-rel="back" title="Atras">Atras</a>
+                <h1>App Final</h1>
+            </div>
+            <div data-role="content">
+                <form id="createUserForm">
+                <label for="email">Email</label>
+                <input type="text" id="email" name="email" />
+                <label for="firstname">Nombres</label>
+                <input type="text" id="firstname" name="firstname" />
+                <label for="lastname">Apellidos</label>
+                <input type="text" id="lastname" name="lastname" />
+                <label for="phone">Teléfono Móvil</label>
+                <input type="text" id="phone" name="phone" />
+                <label for="password">password</label>
+                <input type="password" id="password" name="password" />
+                <a href="#" data-role="button" id="saveUser">Registrar</a>
+            </form>
+            </div>
+            <div data-role="footer" data-position="fixed">
+                <h2>¡Ya Casi terminamos!</h2>            
+            </div>
+        </div>
+        <!-- Script -->
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript" src="js/main.min.js"></script>
