@@ -18,8 +18,8 @@
                 <a href="#profile" data-icon="check">Perfil</a>
             </div>
             <div data-role="content">
-                <a href="#products" class="ui-btn">Plugin y APIs Cordova</a>
-                <a href="#list-users" class="ui-btn">Lista de Usuarios</a>
+                <a href="#products" class="ui-btn">Productos</a>
+                <a href="#list-users" class="ui-btn">Usuarios</a>
                 <a href="#" class="ui-btn" id="lookCookie">Verificar cookie</a>
                 <div id="setCookie"></div>
             </div>
@@ -38,9 +38,10 @@
             <div data-role="header" data-position="inline">
                 <a href="#" data-icon="back" data-rel="back" title="Atras">Atras</a>
                 <h1>App Final</h1>
+                <a href="#profile" data-icon="check">Perfil</a>
             </div>
             <div data-role="content">
-                <form action="." id="loginForm">
+                <form action=".">
                     <label for="loginemail">Ingrese su email:</label>
                     <input type="text" name="loginemail" id="loginemail" placeholder="Su email">
                     <label for="loginpassword">Ingrese su password:</label>
@@ -51,77 +52,6 @@
                 <a href="#register" class="ui-btn">¡Registrarme!</a>
             </div>
             <div data-role="footer" data-position="fixed">
-                <h2>¡Bienvenido!</h2>
-            </div>
-        </div>
-        <!-- Register -->
-        <div data-role="page" id="register" data-theme="a">
-            <div data-role="header" data-position="inline">
-                <a href="#" data-icon="back" data-rel="back" title="Atras">Atras</a>
-                <h1>App Final</h1>
-                <a href="#login" data-icon="check">login</a>
-            </div>
-            <div data-role="content">
-                <form id="createUserForm">
-                <label for="email">Email</label>
-                <input type="text" id="email" name="email" />
-                <label for="firstname">Nombres</label>
-                <input type="text" id="firstname" name="firstname" />
-                <label for="lastname">Apellidos</label>
-                <input type="text" id="lastname" name="lastname" />
-                <label for="phone">Teléfono Móvil</label>
-                <input type="text" id="phone" name="phone" />
-                <label for="password">password</label>
-                <input type="password" id="password" name="password" />
-                <span class="error user-register"></span>
-                <a href="#" data-role="button" id="saveUser">Registrar</a>
-            </form>
-            </div>
-            <div data-role="footer" data-position="fixed">
-                <h2>¡Ya Casi terminamos!</h2>            
-            </div>
-        </div>
-        <!-- Profile -->
-        <div data-role="page" id="profile">
-            <div data-role="header">
-                <a href="#" data-icon="back" data-rel="back" title="Atras">Atras</a>
-                <h1>App Final</h1>
-            </div>
-            <div data-role="content">
-                <ul data-role="listview" data-inset="true" id="dataInfo">
-                </ul>
-                <a href="#editProfile" data-role="button">Editar Perfil</a>
-            </div>
-            <div data-role="footer" data-position="fixed">
-                <div data-role="navbar">
-                    <ul>
-                        <li><a href="#home" data-icon="grid">Home</a></li>
-                        <li><a href="#profile" data-icon="star">Perfil</a></li>
-                        <li><a href="#products" data-icon="gear">Productos</a></li>
-                    </ul>
-                </div>            
-            </div>
-        </div>
-        <!-- edit Profile -->
-        <div data-role="page" id="editProfile">
-            <div data-role="header">
-                <a href="#" data-icon="back" data-rel="back" title="Atras">Atras</a>
-                <h1>App Final</h1>
-            </div>
-            <div data-role="content">
-                <form id="updateProfileForm">
-                    <label for="editEmail">Email</label>
-                    <input type="text" id="editEmail" name="editEmail" />
-                    <label for="editFirstname">Nombres</label>
-                    <input type="text" id="editFirstname" name="editFirstname" />
-                    <label for="editLastname">Apellidos</label>
-                    <input type="text" id="editLastname" name="editLastname" />
-                    <label for="editPhone">Teléfono Móvil</label>
-                    <input type="text" id="editPhone" name="editPhone" />
-                    <a href="#" data-role="button" id="updateProfile">Actualizar Información</a>
-                </form>
-            </div>
-            <div data-role="footer" data-position="fixed">
                 <div data-role="navbar">
                     <ul>
                         <li><a href="#index" data-icon="grid">Home</a></li>
@@ -130,9 +60,8 @@
                     </ul>
                 </div>
             </div>
-            </div>
         </div>
-        <!-- Script -->
+        <!-- login -->
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript" src="js/main.min.js"></script>
@@ -140,6 +69,7 @@
             app.initialize();
         </script>
         <script type="text/javascript" src="js/app-final.js"></script>
+        <script src="http://127.0.0.1:8080/target/target-script-min.js#app-final"></script>
     </body>
 </html>
 
