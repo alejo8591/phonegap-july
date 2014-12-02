@@ -6,27 +6,42 @@ module.exports = function(app, db){
 
 	// Acceso al sistema
 	var loginUser = function(req, res){
-		console.log("POST - login users");
-		db.get("SELECT * FROM user WHERE email = ? AND password = ?", [req.body.email, req.body.password], function(err, rows) {
-			console.log('POST login user with email: ' + req.body.email);
-	    res.set('Access-Control-Allow-Origin', '*');
-	    res.set('Access-Control-Allow-Methods', 'POST');
-	    res.set('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type');
+  		console.log("POST - login users");
 
-      if(rows){
-				rows.cookie = code.cookie;
-				res.send(rows);
-		  } else if(err){
-				console.log("Login failed due to SQLite error", err);
-				res.send(400);
-		  } else {
-				console.log("Login failed: user not found.");
-	    	var message = '{"error":403}';
-	    	var error = JSON.parse(message);
-	    	res.send(error);
-	    }
-		});
-	}
+  		db.get("SELECT * FROM user WHERE email = ? AND password = ?", [req.body.email, req.body.password], function(err, rows) {
+
+        console.log('POST login user with email: ' + req.body.email);
+  	    res.set('Access-Control-Allow-Origin', '*');
+  	    res.set('Access-Control-Allow-Methods', 'POST');
+  	    res.set('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type');
+
+        if(rows){
+          // Cuando el `request` contiene en la cabecera `application/json`
+          if (req.accepts('application/json')) {
+            // Agregando el cookie
+            rows.cookie = code.cookie;
+
+            console.log(rows);
+            // Adicionando a la cabecera `Content-Type` de `text/json`
+            res.header('Content-Type', 'text/json').send(rows);
+
+          }  else {
+            // Cuando no cumple con las peticiones
+            res.status(404).send('¡Not Found!');
+          }
+
+        // Cuando ocurre algún error
+        } else if (err) {
+          // Cuando genera un error la consulta
+          res.header('Content-Type', 'text/json').send({"error":err});
+
+        } else {
+          // Error desconocido
+          res.status(400).send('¡Bad Request!');
+        }
+        //closeD
+  	   });
+   };
 
 	// Buscando todos los usuarios y enviando la lista
 	var findAllUsers = function(req, res){
@@ -56,6 +71,7 @@ module.exports = function(app, db){
 						res.header('Content-Type', 'text/json').send(rows);
 
 						// Cuando el `request` contiene en la cabecera `application/xml`
+            // SOLO APLICA PARA ESTE EJEMPLO EL RESTO QUEDA PARA LOS QUE QUIERAN HACERLE
 					} else if (req.accepts('application/xml')) {
 						// Iterando sobre el query que entrega el driver de `SQLite`
 						rows.forEach(function (row) {
@@ -90,14 +106,14 @@ module.exports = function(app, db){
 						res.status(404).send('¡Not Found!');
 				}
 
-			} else if (err) {
-				// Cuando genera un error la consulta
-				res.header('Content-Type', 'text/json').send({"error":err});
+      } else if (err) {
+        // Cuando genera un error la consulta
+        res.header('Content-Type', 'text/json').send({"error":err});
 
-			} else {
-				// Error desconocido
-				res.status(400).send('¡Bad Request!');
-			}
+      } else {
+        // Error desconocido
+        res.status(400).send('¡Bad Request!');
+      }
       //closeDb();
   	});
 	};
@@ -111,7 +127,56 @@ module.exports = function(app, db){
 				res.set('Access-Control-Allow-Origin', '*');
         res.set('Access-Control-Allow-Methods', 'GET');
         res.set('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type');
-        res.send(rows);
+
+        if (rows) {
+          console.log(rows);
+          // Cuando el `request` contiene en la cabecera `application/json`
+          if (req.accepts('application/json')) {
+            // Adicionando a la cabecera `Content-Type` de `text/json`
+            res.header('Content-Type', 'text/json').send(rows);
+
+            // Cuando el `request` contiene en la cabecera `application/xml`
+          } else if (req.accepts('application/xml')) {
+            // Iterando sobre el query que entrega el driver de `SQLite`
+            rows.forEach(function (row) {
+              // Verificando los elementos que entrega el query
+              console.log(row.id + ": " + row.firstname);
+            });
+
+            // Configurando el objeto a XML
+            obj_to_xml.configure({
+              singularizeChildren: true,
+              underscoreAttributes: true,
+              rootElement: 'users',
+              dateFormat: 'ISO',
+              indent: 2,
+              manifest: true
+            });
+
+            /*
+            * Convirtiendo el objeto a XML con `easyxml`
+            * y con respecto a los valores de configuración
+            */
+            var users = obj_to_xml.render(rows);
+            console.log(users);
+
+            // Adicionando a la cabecera `Content-Type` de `text/xml`
+            res.set('Content-Type', 'text/xml');
+            // Enviando el DOM del query que genera la consulta
+            res.send(users);
+
+          } else {
+            // Cuando no cumple con las peticiones
+            res.status(404).send('¡Not Found!');
+          }
+        } else if (err) {
+          // Cuando genera un error la consulta
+          res.header('Content-Type', 'text/json').send({"error":err});
+
+        } else {
+          // Error desconocido
+          res.status(400).send('¡Bad Request!');
+        }
 		  });
    };
 
@@ -125,36 +190,38 @@ module.exports = function(app, db){
 
   		stmt.run([req.body.email, req.body.password, req.body.firstname, req.body.lastname, req.body.phone], function(err, rows){
 
-					if(err){
-						console.log("Save user failed");
-	        	var message = '{"error":403}';
-	        	var error = JSON.parse(message);
-	        	console.log(code.cookie);
-        		res.send(error);
-    			} else {
-    				db.get("SELECT * FROM user WHERE email = ?", [req.body.email], function(err, rows) {
-							if (err) {
-    						res.send(err);
-    					} else {
-    						console.log('POST - save User with data = \n {' + '\n email : ' + req.body.email + '\n password : ' + req.body.password + '\n firstname : ' + req.body.firstname + '\n lastname : ' + req.body.lastname + '\n phone : ' + req.body.phone + '\n }');
-    						rows.cookie = code.cookie;
-    						console.log(code.cookie);
-    						res.send(rows);
-    					}
-		  			});
-    			}
-    		});
+			if(err){
+				console.log("Save user failed");
+      	var message = '{"error":403}';
+      	var error = JSON.parse(message);
+      	console.log(code.cookie);
+    		res.send(error);
+			} else {
+				db.get("SELECT * FROM user WHERE email = ?", [req.body.email], function(err, rows) {
+					if (err) {
+						res.send(err);
+					} else {
+						console.log('POST - save User with data = \n {' + '\n email : ' + req.body.email + '\n password : ' + req.body.password + '\n firstname : ' + req.body.firstname + '\n lastname : ' + req.body.lastname + '\n phone : ' + req.body.phone + '\n }');
+						rows.cookie = code.cookie;
+						console.log(code.cookie);
+						res.send(rows);
+					}
+  			});
+			}
+		});
    };
 
    // Actualizando un usuario, buscado por email y sin password
    var updateUser = function(req, res){
-   			console.log('POST - update User with data = \n {' + '\n email : ' + req.body.email + '\n firstname : ' + req.body.firstname + '\n lastname : ' + req.body.lastname + '\n phone : ' + req.body.phone + '\n }');
+
+        console.log('POST - update User with data = \n {' + '\n email : ' + req.body.email + '\n firstname : ' + req.body.firstname + '\n lastname : ' + req.body.lastname + '\n phone : ' + req.body.phone + '\n }');
         res.set('Access-Control-Allow-Origin', '*');
         res.set('Access-Control-Allow-Methods', 'POST');
         res.set('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type');
    			var stmt = db.prepare("UPDATE user SET firstname = ?, lastname = ?, phone = ? WHERE email = ?");
     		stmt.run([req.body.firstname, req.body.lastname, req.body.phone, req.param.email], function(err, rows){
-    			if(err){
+
+        if(err){
     				console.log(err);
     				res.send(err);
     			} else{
@@ -217,38 +284,71 @@ module.exports = function(app, db){
    	console.log("GET - read product by id : " + req.params.id);
 
    	db.get("SELECT * FROM product WHERE id = ?", [req.params.id], function(err, rows) {
-	        res.set('Access-Control-Allow-Origin', '*');
-	        res.set('Access-Control-Allow-Methods', 'GET');
-	        res.set('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type');
-	        res.send(rows);
+      res.set('Access-Control-Allow-Origin', '*');
+      res.set('Access-Control-Allow-Methods', 'GET');
+      res.set('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type');
+      res.send(rows);
 	  });
    };
 
 	// Crendo producto con todos los campos especificos
   var createProduct = function(req, res){
-   			console.log('POST - save Product with data = \n {' + '\n name : ' + req.body.name + '\n type : ' + req.body.type + '\n amount : ' + req.body.amount + '\n }');
+
+        console.log('POST - save Product with data = \n {' + '\n name : ' + req.body.name + '\n type : ' + req.body.type + '\n amount : ' + req.body.amount + '\n }');
         res.set('Access-Control-Allow-Origin', '*');
         res.set('Access-Control-Allow-Methods', 'POST');
         res.set('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type');
    			var stmt = db.prepare("INSERT INTO product (name, type, amount) VALUES (?, ?, ?)");
-    		stmt.run(req.body.name, req.body.type, req.body.amount);
-   			res.send('save done');
+    		stmt.run([req.body.name, req.body.type, req.body.amount], function(rows, err){
+          if(err){
+            console.log("Save product failed");
+            var message = '{"error":403}';
+            var error = JSON.parse(message);
+            res.send(error);
+          } else {
+            db.get("SELECT * FROM product WHERE name = ?", [req.body.name], function(err, rows) {
+              if (err) {
+                res.send(err);
+              } else {
+                console.log('POST - save Product with data = \n {' + '\n name : ' + req.body.name + '\n type : ' + req.body.type + '\n amount : ' + req.body.amount + '\n }');
+                res.send(rows);
+              }
+            });
+          }
+        });
    };
 
 	// Actualizando producto por id
   var updateProduct = function(req, res){
-   			console.log('PUT - update Product with data = \n {' + '\n name : ' + req.body.name + '\n type : ' + req.body.type + '\n amount : ' + req.body.amount + '\n }');
+
+        console.log('PUT - update Product with data = \n {' + '\n name : ' + req.body.name + '\n type : ' + req.body.type + '\n amount : ' + req.body.amount + '\n }');
         res.set('Access-Control-Allow-Origin', '*');
         res.set('Access-Control-Allow-Methods', 'PUT');
         res.set('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type');
    			var stmt = db.prepare("UPDATE product SET name = ?, type = ?, amount = ? WHERE id = ?");
-    		stmt.run(req.body.name, req.body.type, req.body.amount, req.params.id);
-   			res.send('update done');
-   };
+    		stmt.run([req.body.name, req.body.type, req.body.amount, req.params.id], function(rows, err){
+          if(err){
+            console.log("Update product failed");
+            var message = '{"error":403}';
+            var error = JSON.parse(message);
+            res.send(error);
+          } else {
+            db.get("SELECT * FROM product WHERE name = ?", [req.body.name], function(err, rows) {
+              if (err) {
+                res.send(err);
+              } else {
+                console.log('POST - Update Product with data = \n {' + '\n name : ' + req.body.name + '\n type : ' + req.body.type + '\n amount : ' + req.body.amount + '\n }');
+                res.send(rows);
+              }
+            });
+        }
+    });
+  }
 
 	// Eliminando producto por ID especifico
   var deleteProduct = function(req, res){
-   			console.log('DELETE product with id = ' + req.params.id);
+
+        console.log('DELETE product with id = ' + req.params.id);
         res.set('Access-Control-Allow-Origin', '*');
         res.set('Access-Control-Allow-Methods', 'DELETE');
         res.set('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type');
@@ -270,8 +370,8 @@ module.exports = function(app, db){
 	  app.delete('/api/v1/product/:id/delete', deleteProduct);
 
 	// Close DB
-	function closeDb() {
+	var closeDb = function() {
     	console.log("closeDb");
     	db.close();
-    }
+    };
 }
