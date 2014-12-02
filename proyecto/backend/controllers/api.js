@@ -219,13 +219,13 @@ module.exports = function(app, db){
         res.set('Access-Control-Allow-Methods', 'POST');
         res.set('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type');
    			var stmt = db.prepare("UPDATE user SET firstname = ?, lastname = ?, phone = ? WHERE email = ?");
-    		stmt.run([req.body.firstname, req.body.lastname, req.body.phone, req.param.email], function(err, rows){
+    		stmt.run([req.body.firstname, req.body.lastname, req.body.phone, req.params.email], function(err, rows){
 
         if(err){
     				console.log(err);
     				res.send(err);
     			} else{
-    				db.get("SELECT * FROM user WHERE email = ?", [req.body.email], function(err, rows) {
+    				db.get("SELECT * FROM user WHERE email = ?", [req.params.email], function(err, rows) {
     					if (err) {
     						res.send(err);
     					} else {
@@ -258,7 +258,7 @@ module.exports = function(app, db){
 	  // URI para buscar usuario especifico por email
 	  app.get('/api/v1/user/:email/find', findUser);
 	  // URI para actualizar usuario
-	  app.post('/api/v1/user/:email/update', updateUser);
+	  app.put('/api/v1/user/:email/update', updateUser);
 	  // URI para eliminar usuario
 	  app.delete('/api/v1/user/:email/delete', deleteUser);
 
@@ -354,7 +354,7 @@ module.exports = function(app, db){
         res.set('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type');
    			var stmt = db.prepare("DELETE FROM product WHERE id = ?");
     		stmt.run(req.params.id);
-   			res.send('update done');
+   			res.send('Delete done');
    };
 
 	  //Link para las resolución de URLs y la gestión de las mismas
@@ -373,5 +373,5 @@ module.exports = function(app, db){
 	var closeDb = function() {
     	console.log("closeDb");
     	db.close();
-    };
+  };
 }

@@ -74,7 +74,7 @@ if (app.get('env') === 'development') {
 }
 
 // uitilizando routes para resolver las URLs de la API
-routes = require('./routes/api')(app, db);
+routes = require('./controllers/api')(app, db);
 
 // Exportando y publicando el valor "Cookie"
 module.exports.cookie = '86d049d72a63027eb736fe9b7e240e28';
