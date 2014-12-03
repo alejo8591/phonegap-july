@@ -1,4 +1,4 @@
-require(['../Models/User', '../Controllers/ListController'], function(User, ListController){
+require(['../Models/User', 'Router'], function(User, Router){
   var users = [
         new User('Romero Triana'),
         new User('Laura M,'),
@@ -11,6 +11,5 @@ require(['../Models/User', '../Controllers/ListController'], function(User, List
 
   localStorage.users = JSON.stringify(users);
 
-  ListController.start();
-
+  Router.startRouting();
 });
