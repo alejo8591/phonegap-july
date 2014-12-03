@@ -1,5 +1,7 @@
-require(['Models/User', 'Router'], function(User, Router){
-  var users = [
+require(['Models/User', 'Router', 'jquery', 'jquery_mobile'], function(User, Router, $, jquery_mobile){
+
+  //var mobile = jquery_mobile;
+  /*var users = [
         new User('Romero Triana'),
         new User('Laura M,'),
         new User('Keren Saenz')
@@ -11,5 +13,10 @@ require(['Models/User', 'Router'], function(User, Router){
 
   localStorage.users = JSON.stringify(users);
 
-  Router.startRouting();
+  $('#todo').html('<h1>yopo</h1>');
+
+  Router.startRouting(); */
+
+  //Router.startRouting();
+
 });

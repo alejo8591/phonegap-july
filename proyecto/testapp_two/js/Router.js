@@ -1,8 +1,11 @@
 define(function(){
 
-  var routes = [{hash:'#list', controller:'ListController'},
-  {hash:'#add',  controller:'AddController'}];
-  var defaultRoute = '#list';
+  var routes = [
+  {hash:'#list', controller:'ListController'},
+  {hash:'#add',  controller:'AddController'}
+  ];
+
+  var defaultRoute = '#home';
   var currentHash = '';
 
   function startRouting(){
@@ -22,6 +25,7 @@ define(function(){
 
     function loadController(controllerName){
       require(['Controllers/' + controllerName], function(controller){
+        console.log('On Load Controller');
         controller.start();
       });
     }
