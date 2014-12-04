@@ -13,59 +13,184 @@
         <title>Product App</title>
     </head>
     <body>
+      <!-- ********* START: HOME ********* -->
       <!-- home -->
       <div data-role="page" id="home" data-theme="a">
         <div data-role="panel" id="menu-home">
           <ul data-role="listview">
             <li><a href="#home" data-icon="grid">Home</a></li>
-            <li><a href="#profile" data-icon="star">Perfil</a></li>
+            <li><a href="#profile-detail" data-icon="star">Perfil</a></li>
             <li><a href="#products" data-icon="gear">Productos</a></li>
           </ul>
         </div>
-        <div data-role="header" data-position="inline">
+        <div data-role="header" data-position="inline" id="header-home">
           <a href="#" data-icon="back" data-rel="back" class="ui-btn ui-icon-back ui-shadow ui-corner-all ui-btn-icon-notext"></a>
           <h1>Product App</h1>
           <a href="#menu-home" class="ui-btn ui-icon-bullets ui-shadow ui-corner-all ui-btn-icon-notext"></a>
         </div>
         <div data-role="content" id="content-home">
         </div>
-        <div data-role="footer" data-position="fixed">
+        <div data-role="footer" data-position="fixed" id="footer-home">
           <div data-role="navbar">
             <ul>
               <li><a href="#home" class="ui-btn-active">Home</a></li>
-              <li><a href="#profile">Perfil</a></li>
+              <li><a href="#profile-detail">Perfil</a></li>
+              <li><a href="#products">Productos</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- *************** END: HOME ***************** -->
+
+      <!-- ********* START: LOGIN & REGISTER ********* -->
+      <!-- options -->
+      <div data-role="page" id="options" data-theme="a">
+        <div data-role="header" data-position="inline" id="header-options">
+          <h1>Opciones</h1>
+        </div>
+        <div data-role="content" id="content-options">
+        </div>
+        <div data-role="footer" data-position="fixed" id="footer-options">
+        </div>
+      </div>
+
+      <!-- login -->
+      <div data-role="page" id="login" data-theme="a">
+        <div data-role="header" data-position="inline" id="header-login">
+          <h1>Product App</h1>
+        </div>
+        <div data-role="content" id="content-login">
+        </div>
+        <div data-role="footer" data-position="fixed" id="footer-login">
+        </div>
+      </div>
+
+      <!-- register -->
+      <div data-role="page" id="register" data-theme="a">
+        <div data-role="header" data-position="inline" id="header-register">
+          <h1>Product App</h1>
+        </div>
+        <div data-role="content" id="content-register">
+        </div>
+        <div data-role="footer" data-position="fixed" id="footer-register">
+        </div>
+      </div>
+      <!-- *********** END: LOGIN & REGISTER ************ -->
+
+      <!-- *************** START: PROFILE **************** -->
+
+      <!-- profile-detail -->
+      <div data-role="page" id="profile-detail" data-theme="a">
+        <div data-role="panel" id="menu-profile-detail">
+          <ul data-role="listview">
+            <li><a href="#home" data-icon="grid">Home</a></li>
+            <li><a href="#profile-detail" data-icon="star">Perfil</a></li>
+            <li><a href="#products" data-icon="gear">Productos</a></li>
+          </ul>
+        </div>
+        <div data-role="header" data-position="inline" id="header-profile-detail">
+          <a href="#" data-icon="back" data-rel="back" class="ui-btn ui-icon-back ui-shadow ui-corner-all ui-btn-icon-notext"></a>
+          <h1>Product App</h1>
+          <a href="#menu-profile-detail" class="ui-btn ui-icon-bullets ui-shadow ui-corner-all ui-btn-icon-notext"></a>
+        </div>
+        <div data-role="content" id="content-profile-detail">
+        </div>
+        <div data-role="footer" data-position="fixed" id="footer-profile-detail">
+          <div data-role="navbar">
+            <ul>
+              <li><a href="#home" class="ui-btn-active">Home</a></li>
+              <li><a href="#profile-detail">Perfil</a></li>
               <li><a href="#products">Productos</a></li>
             </ul>
           </div>
         </div>
       </div>
 
-      <!-- profile -->
-      <div data-role="page" id="profile" data-theme="a">
-        <div data-role="panel" id="menu-profile">
+      <!-- profile-edit -->
+      <div data-role="page" id="profile-edit" data-theme="a">
+        <div data-role="panel" id="menu-profile-edit">
           <ul data-role="listview">
             <li><a href="#home" data-icon="grid">Home</a></li>
-            <li><a href="#profile" data-icon="star">Perfil</a></li>
+            <li><a href="#profile-detail" data-icon="star">Perfil</a></li>
             <li><a href="#products" data-icon="gear">Productos</a></li>
           </ul>
         </div>
-        <div data-role="header" data-position="inline">
+        <div data-role="header" data-position="inline" id="header-profile-edit">
           <a href="#" data-icon="back" data-rel="back" class="ui-btn ui-icon-back ui-shadow ui-corner-all ui-btn-icon-notext"></a>
           <h1>Product App</h1>
-          <a href="#menu-profile" class="ui-btn ui-icon-bullets ui-shadow ui-corner-all ui-btn-icon-notext"></a>
+          <a href="#menu-profile-edit" class="ui-btn ui-icon-bullets ui-shadow ui-corner-all ui-btn-icon-notext"></a>
         </div>
-        <div data-role="content">
+        <div data-role="content" id="content-profile-edit">edit
         </div>
-        <div data-role="footer" data-position="fixed">
+        <div data-role="footer" data-position="fixed" id="footer-profile-edit">
           <div data-role="navbar">
             <ul>
               <li><a href="#home" class="ui-btn-active">Home</a></li>
-              <li><a href="#profile">Perfil</a></li>
+              <li><a href="#profile-detail">Perfil</a></li>
               <li><a href="#products">Productos</a></li>
             </ul>
           </div>
         </div>
       </div>
+
+      <!-- ********** END: PROFILE ********** -->
+
+      <!-- ********* START: PRODUCT ********* -->
+
+      <!-- product-detail -->
+      <div data-role="page" id="product-detail" data-theme="a">
+        <div data-role="panel" id="menu-product-detail">
+          <ul data-role="listview">
+            <li><a href="#home" data-icon="grid">Home</a></li>
+            <li><a href="#profile-detail" data-icon="star">Perfil</a></li>
+            <li><a href="#products" data-icon="gear">Productos</a></li>
+          </ul>
+        </div>
+        <div data-role="header" data-position="inline" id="header-product-detail">
+          <a href="#" data-icon="back" data-rel="back" class="ui-btn ui-icon-back ui-shadow ui-corner-all ui-btn-icon-notext"></a>
+          <h1>Product App</h1>
+          <a href="#menu-product-detail" class="ui-btn ui-icon-bullets ui-shadow ui-corner-all ui-btn-icon-notext"></a>
+        </div>
+        <div data-role="content" id="content-product-detail">
+        </div>
+        <div data-role="footer" data-position="fixed" id="footer-profile-detail">
+          <div data-role="navbar">
+            <ul>
+              <li><a href="#home" class="ui-btn-active">Home</a></li>
+              <li><a href="#profile-detail">Perfil</a></li>
+              <li><a href="#products">Productos</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- product-edit -->
+      <div data-role="page" id="product-edit" data-theme="a">
+        <div data-role="panel" id="menu-product-edit">
+          <ul data-role="listview">
+            <li><a href="#home" data-icon="grid">Home</a></li>
+            <li><a href="#profile-detail" data-icon="star">Perfil</a></li>
+            <li><a href="#products" data-icon="gear">Productos</a></li>
+          </ul>
+        </div>
+        <div data-role="header" data-position="inline" id="header-product-edit">
+          <a href="#" data-icon="back" data-rel="back" class="ui-btn ui-icon-back ui-shadow ui-corner-all ui-btn-icon-notext"></a>
+          <h1>Product App</h1>
+          <a href="#menu-product-edit" class="ui-btn ui-icon-bullets ui-shadow ui-corner-all ui-btn-icon-notext"></a>
+        </div>
+        <div data-role="content" id="content-product-edit">
+        </div>
+        <div data-role="footer" data-position="fixed" id="footer-product-edit">
+          <div data-role="navbar">
+            <ul>
+              <li><a href="#home" class="ui-btn-active">Home</a></li>
+              <li><a href="#profile-detail">Perfil</a></li>
+              <li><a href="#products">Productos</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- ********* END: PRODUCT ********* -->
       <!-- scripts -->
       <script type="text/javascript" src="cordova.js"></script>
       <script type="text/javascript" src="js/index.js"></script>

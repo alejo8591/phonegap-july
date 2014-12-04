@@ -1,13 +1,13 @@
 define([
   'jquery',
-  'jquery_mobile',
+  'mobile',
   '../Models/Product',
   '../Views/ViewProduct'
   ],
-  function($, jquery_mobile, Product, ViewProduct){
+  function($, mobile, Product, ViewProduct){
 
     var getListProducts = function(id_page, id_list){
-      
+
       $.get('http://127.0.0.1:7070/api/v1/product/list', function(data) {
 
         var products = [];

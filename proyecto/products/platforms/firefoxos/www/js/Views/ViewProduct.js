@@ -1,10 +1,10 @@
 define([
   'jquery',
-  'jquery_mobile',
+  'mobile',
   '../Models/Product',
   '../Views/ViewProduct'
   ],
-  function($, jquery_mobile){
+  function($, mobile){
 
     var revealProducts = function(id_page, id_list, products){
 
@@ -13,7 +13,9 @@ define([
       for (var i = 0; i < products.length; i++) {
         $('#' + id_list).append('<li>' + products[i].name + '</li>');
       }
-
+      /*
+      https://stackoverflow.com/questions/10373618/jquerymobile-error-cannot-call-methods-on-listview-prior-to-initialization/19111711#19111711
+      */
       $('#' + id_list + ':visible').listview().listview('refresh');
 
     };
