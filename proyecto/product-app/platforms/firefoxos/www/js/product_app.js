@@ -138,7 +138,11 @@ $(document).on('pagecreate', '#login', function(){
 
             console.log(data.error);
 
-            navigator.notification.alert('Usuarion y/o Contraseña invalidos', null, '¡Error!', 'Aceptar');
+            var onAlert = function(){
+              $('#content-login-form').trigger('reset');
+            };
+
+            navigator.notification.alert('Usuarion y/o Contraseña invalidos', onAlert, '¡Error!', 'Aceptar');
 
           } else {
 
