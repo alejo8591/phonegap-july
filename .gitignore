@@ -62,16 +62,16 @@ node_modules
 .floo
 .flooignore
 # Ignore assets
-*/assets/
-assets/
+#*/assets/
+#assets/
 # Ignore public files
-*/*/public/
-public/
+#*/*/public/
+#public/
 
 files/
 # ignore assets
-*/*/www/js/
-*/*/www/css/
+#*/*/www/js/
+#*/*/www/css/
 proyecto/frontend/
 
 # Ignore database file
