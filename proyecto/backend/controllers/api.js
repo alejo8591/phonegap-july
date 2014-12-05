@@ -11,9 +11,9 @@ module.exports = function(app, db){
   		db.get("SELECT * FROM user WHERE email = ? AND password = ?", [req.body.email, req.body.password], function(err, rows) {
 
         console.log('POST login user with email: ' + req.body.email);
-  	    res.set('Access-Control-Allow-Origin', '*');
-  	    res.set('Access-Control-Allow-Methods', 'POST');
-  	    res.set('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type');
+  	    res.header('Access-Control-Allow-Origin', '*');
+  	    res.header('Access-Control-Allow-Methods', 'POST');
+  	    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With, *');
 
         if(rows){
           // Cuando el `request` contiene en la cabecera `application/json`
