@@ -55,11 +55,7 @@ $(document).on('pagecreate', '#home', function(){
 
       $.get('http://192.168.0.3:7070/api/v1/product/list', function(data){
 
-        console.log(data.length);
-
         $("#content-home-list-products").children().remove();
-
-        var nodes;
 
         for (var i = 0; i < data.length; i++) {
           $('#content-home-list-products').append('<li><a href="#" id="product-' + data[i].id + '">' + data[i].name + '</a><li>');
@@ -67,8 +63,9 @@ $(document).on('pagecreate', '#home', function(){
 
         $('#content-home-list-products').listview().listview('refresh');
 
-      }).fail(function(error){
-        console.log(error);
+      }).fail(function(jqXHR, textStatus, errorThrown){
+        // console.log(error.statusCode);
+        console.log(textStatus, errorThrown);
       });
 
     } else {
@@ -137,31 +134,38 @@ $(document).on('pagecreate', '#login', function(){
 
         $.post('http://192.168.0.3:7070/api/v1/user/login', {"email":email, "password":password}, function(data){
 
-          console.log(data);
+          if (Object.keys(data).indexOf("error") === 0) {
 
-          window.sessionStorage.setItem('cookie', data.cookie);
+            console.log(data.error);
 
-          user_info.save({key:'user', detail:data});
+            navigator.notification.alert('Usuarion y/o Contraseña invalidos', null, '¡Error!', 'Aceptar');
 
-          $.get('http://192.168.0.3:7070/api/v1/product/list', function(data){
+          } else {
 
-            console.log(data.length);
+            window.sessionStorage.setItem('cookie', data.cookie);
 
-            $("#content-home-list-products").children().remove();
+            user_info.save({key:'user', detail:data});
 
-            var nodes;
+            $.get('http://192.168.0.3:7070/api/v1/product/list', function(data){
 
-            for (var i = 0; i < data.length; i++) {
-              $('#content-home-list-products').append('<li><a href="#" id="product-' + data[i].id + '">' + data[i].name + '</a><li>');
-            }
+              console.log(data.length);
 
-            $('#content-home-list-products').listview().listview('refresh');
+              $("#content-home-list-products").children().remove();
 
-          }).fail(function(error){
-            console.log(error);
-          });
+              for (var i = 0; i < data.length; i++) {
+                $('#content-home-list-products').append('<li><a href="#" id="product-' + data[i].id + '">' + data[i].name + '</a><li>');
+              }
 
-          $('body').pagecontainer('change', '#home');
+              $('#content-home-list-products').listview().listview('refresh');
+
+            }).fail(function(jqXHR, textStatus, errorThrown){
+              // console.log(error.statusCode);
+              console.log(textStatus, errorThrown);
+            });
+
+            $('body').pagecontainer('change', '#home');
+          }
+
 
         }).fail(function(error){
           console.log(error);
