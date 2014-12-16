@@ -1,5 +1,5 @@
 <?php
-
+/*
 class firstTest extends \PHPUnit_Framework_TestCase
 {
   public function testTrueIsTrue()
@@ -7,5 +7,5 @@ class firstTest extends \PHPUnit_Framework_TestCase
     $test = true;
     $this->assertTrue($test);
   }
-}
+} */
 ?>
