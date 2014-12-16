@@ -17,7 +17,7 @@ class PaymentTest extends \PHPUnit_Framework_TestCase
                          ->setConstructorArgs(array($payment::API_ID, $payment::TRANS_KEY))
                          ->getMock();
 
-    authorizeNet->expects($this->once())
+    $authorizeNet->expects($this->once())
                 ->method('authorizeAndCapture')
                 ->will($this->returnValue($response));
 
